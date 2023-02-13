@@ -20,10 +20,21 @@ namespace moment3cdsamling.Controllers
         }
 
         // GET: Album
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            var dataContext = _context.Albums.Include(a => a.Artist);
-            return View(await dataContext.ToListAsync());
+           ViewData["CurrentFilter"] = searchString;
+
+            var albums = from s in _context.Albums.Include(a => a.Artist)
+                         select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                albums = albums.Where(s => s.Name.Contains(searchString) );
+            }
+
+            return View(await albums.AsNoTracking().ToListAsync());
+            //var dataContext = _context.Albums.Include(a => a.Artist);
+            //return View(await dataContext.ToListAsync());
         }
 
         // GET: Album/Details/5

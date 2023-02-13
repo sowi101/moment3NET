@@ -50,7 +50,7 @@ namespace moment3cdsamling.Controllers
         public IActionResult Create()
         {
             ViewData["AlbumId"] = new SelectList(_context.Albums, "AlbumId", "Name");
-            ViewData["PersonId"] = new SelectList(_context.Persons, "PersonId", "PersonId");
+            ViewData["PersonId"] = new SelectList(_context.Persons, "PersonId", "Name");
             return View();
         }
 
@@ -68,7 +68,7 @@ namespace moment3cdsamling.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AlbumId"] = new SelectList(_context.Albums, "AlbumId", "Name", loan.AlbumId);
-            ViewData["PersonId"] = new SelectList(_context.Persons, "PersonId", "PersonId", loan.PersonId);
+            ViewData["PersonId"] = new SelectList(_context.Persons, "PersonId", "Name", loan.PersonId);
             return View(loan);
         }
 
@@ -86,7 +86,7 @@ namespace moment3cdsamling.Controllers
                 return NotFound();
             }
             ViewData["AlbumId"] = new SelectList(_context.Albums, "AlbumId", "Name", loan.AlbumId);
-            ViewData["PersonId"] = new SelectList(_context.Persons, "PersonId", "PersonId", loan.PersonId);
+            ViewData["PersonId"] = new SelectList(_context.Persons, "PersonId", "Name", loan.PersonId);
             return View(loan);
         }
 
@@ -123,7 +123,7 @@ namespace moment3cdsamling.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AlbumId"] = new SelectList(_context.Albums, "AlbumId", "Name", loan.AlbumId);
-            ViewData["PersonId"] = new SelectList(_context.Persons, "PersonId", "PersonId", loan.PersonId);
+            ViewData["PersonId"] = new SelectList(_context.Persons, "PersonId", "Name", loan.PersonId);
             return View(loan);
         }
 

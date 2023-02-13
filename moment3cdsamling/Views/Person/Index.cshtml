@@ -1,13 +1,12 @@
 ﻿@model IEnumerable<moment3cdsamling.Models.Person>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Personer";
 }
 
-<h1>Index</h1>
-
+<h1>@ViewData["Title"]</h1>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Lägg till ny person</a>
 </p>
 <table class="table">
     <thead>
@@ -37,9 +36,9 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PersonId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PersonId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PersonId">Delete</a>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.PersonId">Ändra</a>
+                <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.PersonId">Detaljer</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PersonId">Radera</a>
             </td>
         </tr>
 }
