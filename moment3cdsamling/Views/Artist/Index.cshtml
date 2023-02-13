@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<moment3cdsamling.Models.Artist>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Artister";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary"  asp-action="Create">Lägg till ny artist/grupp</a>
 </p>
 <table class="table">
     <thead>
@@ -31,9 +31,9 @@
                 @Html.DisplayFor(modelItem => item.Information)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ArtistId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ArtistId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ArtistId">Delete</a>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.ArtistId">Ändra</a>
+                <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.ArtistId">Detaljer</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ArtistId">Radera</a>
             </td>
         </tr>
 }
