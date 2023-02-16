@@ -1,13 +1,16 @@
 ﻿@model IEnumerable<moment3cdsamling.Models.Person>
 
 @{
-    ViewData["Title"] = "Personer";
+    // Save title to ViewData
+    ViewData["Title"] = "Kontakter";
 }
 
 <h1>@ViewData["Title"]</h1>
 <p>
-    <a class="btn btn-primary" asp-action="Create">Lägg till ny person</a>
+    <a class="btn btn-dark btn-sm" asp-action="Create">Lägg till ny kontakt</a>
 </p>
+
+<!-- Table for contacts -->
 <table class="table">
     <thead>
         <tr>
@@ -24,7 +27,8 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        <!-- Foreach to print information about contacts -->
+        @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -36,11 +40,11 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.PersonId">Ändra</a>
-                <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.PersonId">Detaljer</a>
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PersonId">Radera</a>
+                <a class="btn btn-dark btn-sm" asp-action="Edit" asp-route-id="@item.PersonId">Ändra</a>
+                <a class="btn btn-dark btn-sm" asp-action="Details" asp-route-id="@item.PersonId">Detaljer</a>
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.PersonId">Radera</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>

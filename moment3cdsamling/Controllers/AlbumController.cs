@@ -22,19 +22,22 @@ namespace moment3cdsamling.Controllers
         // GET: Album
         public async Task<IActionResult> Index(string searchString)
         {
-           ViewData["CurrentFilter"] = searchString;
+            // Save value from form to ViewData
+            ViewData["SearchFilter"] = searchString;
 
-            var albums = from s in _context.Albums.Include(a => a.Artist)
-                         select s;
+            // Query to get all albums
+            var albums = from c in _context.Albums.Include(a => a.Artist)
+                         select c;
 
+            // If statement checks that the variable for search string isn't empty
             if (!String.IsNullOrEmpty(searchString))
             {
-                albums = albums.Where(s => s.Name.Contains(searchString) );
+                // Query to get all albums with a name that correspond with search string
+                albums = albums.Where(c => c.Name.Contains(searchString));
             }
 
+            // Send data to view
             return View(await albums.AsNoTracking().ToListAsync());
-            //var dataContext = _context.Albums.Include(a => a.Artist);
-            //return View(await dataContext.ToListAsync());
         }
 
         // GET: Album/Details/5

@@ -1,7 +1,8 @@
 ﻿@model moment3cdsamling.Models.Person
 
 @{
-    ViewData["Title"] = "Lägg till ny person";
+    // Save title to ViewData
+    ViewData["Title"] = "Lägg till ny kontakt";
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -9,6 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-12">
+        <!-- Form to add contact -->
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="row">
@@ -30,8 +32,8 @@
             </div>
             <br />
             <div class="form-group">
-                <input type="submit" value="Spara" class="btn btn-primary" />
-                <a class="btn btn-primary" asp-action="Index">Tillbaka till lista</a>
+                <input type="submit" value="Spara" class="btn btn-dark btn-sm" />
+                <a class="btn btn-dark btn-sm" asp-action="Index">Tillbaka till listan</a>
             </div>
         </form>
     </div>

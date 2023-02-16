@@ -1,6 +1,7 @@
 ﻿@model moment3cdsamling.Models.Person
 
 @{
+    // Save title to ViewData
     ViewData["Title"] = "Detaljer för " + Model.Name;
 }
 
@@ -8,6 +9,7 @@
 
 <div>
     <hr />
+    <!-- Description list with details for contact -->
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
@@ -30,6 +32,6 @@
     </dl>
 </div>
 <div>
-    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.PersonId">Ändra</a>
-    <a class="btn btn-primary" asp-action="Index">Tillbaka till lista</a>
+    <a class="btn btn-dark btn-sm" asp-action="Edit" asp-route-id="@Model?.PersonId">Ändra</a>
+    <a class="btn btn-dark btn-sm" asp-action="Index">Tillbaka till listan</a>
 </div>

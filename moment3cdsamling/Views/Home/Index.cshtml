@@ -1,26 +1,30 @@
 ﻿@{
+    // Save title to ViewData
     ViewData["Title"] = "Välkommen";
 }
 
 <h1>@ViewData["Title"]</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sodales neque sodales ut etiam sit amet nisl. Sed lectus vestibulum mattis ullamcorper velit sed. Amet volutpat consequat mauris nunc congue. Nisl nisi scelerisque eu ultrices vitae. Ut pharetra sit amet aliquam. Commodo elit at imperdiet dui accumsan sit amet. Aliquet enim tortor at auctor urna nunc. Augue lacus viverra vitae congue eu. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Bibendum at varius vel pharetra vel turpis nunc eget lorem. Nec dui nunc mattis enim. Odio ut enim blandit volutpat maecenas volutpat blandit. Massa enim nec dui nunc. Phasellus egestas tellus rutrum tellus pellentesque eu.</p>
-<div class="d-flex">
+<!-- Information about the assignment -->
+<p>I moment 3 har uppgiften varit att skapa en databaskopplad applikation för en CD-samling baserad på ASP.NET Core MVC med hjälp av Entity Framework Core.</p>
+<div class="d-block d-md-flex">
     <div class="col-12 col-md-6">
-        <p>Odio ut enim blandit volutpat maecenas volutpat blandit.</p>
+        <!-- Mandatory requirements -->
+        <p class="fw-bold">Obligatoriska krav</p>
         <ul>
-            <li>Odio ut enim blandit volutpat maecenas volutpat blandit.</li>
-            <li>Odio ut enim blandit volutpat maecenas volutpat blandit.</li>
-            <li>Odio ut enim blandit volutpat maecenas volutpat blandit.</li>
-            <li>Odio ut enim blandit volutpat maecenas volutpat blandit.</li>
+            <li>Användning av Models, Controllers och Views.</li>
+            <li>Användning av Entity Framework Core.</li>
+            <li>Användning av principen CodeFirst vid skapande av databas.</li>
+            <li>Information om ett album ska kunna skapas, visas, ändras och raderas.</li>
+            <li>Alla album samt information om enskilda album ska kunna visas.</li>
         </ul>
     </div>
     <div class="col-12 col-md-6">
-        <p>Odio ut enim blandit volutpat maecenas volutpat blandit.</p>
+        <!-- Optional requirements -->
+        <p class="fw-bold">Frivilliga krav</p>
         <ul>
-            <li>Odio ut enim blandit volutpat maecenas volutpat blandit.</li>
-            <li>Odio ut enim blandit volutpat maecenas volutpat blandit.</li>
-            <li>Odio ut enim blandit volutpat maecenas volutpat blandit.</li>
-            <li>Odio ut enim blandit volutpat maecenas volutpat blandit.</li>
+            <li>Hantera lån av album med information om personen som lånat och datum för lånet.</li>
+            <li>Lägga till minst en extra tabell för att hantera information om den som lånar ett album.</li>
+            <li>Skapa sökfunktion för album.</li>
         </ul>
     </div>
 </div>

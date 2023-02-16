@@ -1,13 +1,15 @@
 ﻿@model moment3cdsamling.Models.Album
 
 @{
-    ViewData["Title"] = "Lägg till album";
+    // Save title to ViewData
+    ViewData["Title"] = "Lägg till nytt album";
 }
 
 <h1>@ViewData["Title"]</h1>
 
 <div class="row">
     <div class="col-12">
+        <!-- Form to add album -->
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="row">
@@ -30,8 +32,8 @@
             <br />
 
             <div class="form-group">
-                <input type="submit" value="Spara" class="btn btn-primary" />
-                <a class="btn btn-primary" asp-action="Index">Tillbaka till lista</a>
+                <input type="submit" value="Spara" class="btn btn-dark btn-sm" />
+                <a class="btn btn-dark btn-sm" asp-action="Index">Tillbaka till listan</a>
             </div>
 
         </form>

@@ -18,11 +18,14 @@ namespace moment3cdsamling.Models
         [Display(Name = "Release")]
         public int? Release { get; set; }
 
+
+            // Relation to Artist model
         [Required(ErrorMessage = "Du måste fylla i artist/grupp för albumet.")]
-        [Display(Name = "Artist")]
+        [Display(Name = "Artist/grupp")]
         public int ArtistId { get; set; }
         public Artist? Artist { get; set; }
 
+            // Relation to Loan model
         public List<Loan>? Loans { get; set; }
     }
 }

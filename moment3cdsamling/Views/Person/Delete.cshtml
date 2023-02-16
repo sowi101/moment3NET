@@ -1,14 +1,16 @@
 ﻿@model moment3cdsamling.Models.Person
 
 @{
+    // Save title to ViewData
     ViewData["Title"] = "Radera " + Model.Name;
 }
 
 <h1>@ViewData["Title"]</h1>
 
-<h2>Är du säker på att du vill radera?</h2>
+<h2>Är du säker på att du vill radera kontakten?</h2>
 <div>
     <hr />
+    <!-- Description list with details for contact -->
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
@@ -30,9 +32,10 @@
         </dd>
     </dl>
     
+    <!-- Form with submit button to delete contact -->
     <form asp-action="Delete">
         <input type="hidden" asp-for="PersonId" />
-        <input type="submit" value="Radera" class="btn btn-danger" />
-        <a class="btn btn-primary" asp-action="Index">Tillbaka till lista</a>
+        <input type="submit" value="Radera" class="btn btn-danger btn-sm" />
+        <a class="btn btn-dark btn-sm" asp-action="Index">Tillbaka till listan</a>
     </form>
 </div>

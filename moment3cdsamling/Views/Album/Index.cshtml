@@ -1,25 +1,27 @@
 ﻿@model IEnumerable<moment3cdsamling.Models.Album>
 
 @{
+    // Save title to ViewData
     ViewData["Title"] = "Album";
 }
 
 <h1>@ViewData["Title"]</h1>
 
-<p>
-    <a class="btn btn-primary" asp-action="Create">Lägg till nytt album</a>
-</p>
-
+<!-- Form to search album (+ link to add album) -->
 <form asp-action="Index" method="get">
-    <div class="form-actions">
+    <div class="form-actions d-md-flex justify-content-between">
         <p>
-            Sök album <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
-            <input type="submit" value="Sök" class="btn btn-primary" />
-            <a class="btn btn-primary" asp-action="Index">Tillbaka till hela listan</a>
+            <a class="btn btn-dark btn-sm" asp-action="Create">Lägg till nytt album</a>
+        </p>
+        <p>
+            <input type="text" name="SearchString" value="@ViewData["SearchFilter"]" />
+            <input type="submit" value="Sök" class="btn btn-dark btn-sm" />
+            <a class="btn btn-dark btn-sm" asp-action="Index">Se hela listan</a>
         </p>
     </div>
 </form>
 
+<!-- Table for albums -->
 <table class="table">
     <thead>
         <tr>
@@ -36,7 +38,8 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        <!-- Foreach loop to print information about album -->
+        @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -48,11 +51,11 @@
                 @Html.DisplayFor(modelItem => item.Artist.Name)
             </td>
             <td>
-                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.AlbumId">Ändra</a>
-                <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.AlbumId">Detaljer</a>
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.AlbumId">Radera</a>
+                <a class="btn btn-dark btn-sm" asp-action="Edit" asp-route-id="@item.AlbumId">Ändra</a>
+                <a class="btn btn-dark btn-sm" asp-action="Details" asp-route-id="@item.AlbumId">Detaljer</a>
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.AlbumId">Radera</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>

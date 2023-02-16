@@ -1,36 +1,37 @@
 ﻿@model moment3cdsamling.Models.Loan
 
 @{
-    ViewData["Title"] = "Details";
+    // Save title to ViewData
+    ViewData["Title"] = "Detaljer för lån";
 }
 
-<h1>Details</h1>
+<h1>@ViewData["Title"]</h1>
 
 <div>
-    <h4>Loan</h4>
     <hr />
+    <!-- Description list with details for loan of album -->
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.Album)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.Album.Name)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Person)
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.PersonId)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Person.PersonId)
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Person.Name)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.BorrowedDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.BorrowedDate)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-dark btn-sm" asp-action="Edit" asp-route-id="@Model?.Id">Ändra</a>
+    <a class="btn btn-dark btn-sm" asp-action="Index">Tillbaka till listan</a>
 </div>

@@ -1,14 +1,17 @@
 ﻿@model IEnumerable<moment3cdsamling.Models.Loan>
 
 @{
-    ViewData["Title"] = "Utlån";
+    // Save title to ViewData
+    ViewData["Title"] = "Lån av album";
 }
 
 <h1>@ViewData["Title"]</h1>
 
 <p>
-    <a class="btn btn-primary" asp-action="Create">Lägg till nytt utlån</a>
+    <a class="btn btn-dark btn-sm" asp-action="Create">Lägg till nytt lån</a>
 </p>
+
+<!-- Table for loans of albums-->
 <table class="table">
     <thead>
         <tr>
@@ -16,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.Album)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Person)
+                @Html.DisplayNameFor(model => model.PersonId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.BorrowedDate)
@@ -25,7 +28,8 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        <!-- Foreach loop to print information about loan of album -->
+        @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Album.Name)
@@ -37,9 +41,9 @@
                 @Html.DisplayFor(modelItem => item.BorrowedDate)
             </td>
             <td>
-                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Ändra</a>
-                <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Detaljer</a>
-                <a class="btn btn-primary" asp-action="Delete" asp-route-id="@item.Id">Radera</a>
+                <a class="btn btn-dark btn-sm" asp-action="Edit" asp-route-id="@item.Id">Ändra</a>
+                <a class="btn btn-dark btn-sm" asp-action="Details" asp-route-id="@item.Id">Detaljer</a>
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">Radera</a>
             </td>
         </tr>
 }

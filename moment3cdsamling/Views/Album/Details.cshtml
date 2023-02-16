@@ -1,12 +1,14 @@
 ﻿@model moment3cdsamling.Models.Album
 
 @{
-    ViewData["Title"] = "Detaljer";
+    // Save title to ViewData
+    ViewData["Title"] = "Detaljer för " + Model.Name;
 }
 
 <h1>@ViewData["Title"]</h1>
 
 <div>
+    <!-- Description list with details for album -->
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
@@ -29,6 +31,6 @@
     </dl>
 </div>
 <div>
-    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.AlbumId">Ändra</a>
-    <a class="btn btn-primary" asp-action="Index">Tillbaka till lista</a>
+    <a class="btn btn-dark btn-sm" asp-action="Edit" asp-route-id="@Model?.AlbumId">Ändra</a>
+    <a class="btn btn-dark btn-sm" asp-action="Index">Tillbaka till listan</a>
 </div>
